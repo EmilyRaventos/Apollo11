@@ -1,0 +1,43 @@
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+ 
+# Precompiled Headers
+*.gch
+*.pch
+ 
+# Executables
+*.exe
+*.out
+*.app
+*.ipa
+ 
+# Visual Studio specific
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+ 
+# Visual Studio files
+.vs/
+Debug/
+Release/
+ 
+# vscode specific
+.vscode/
+ 
+# XCode specific
+*.xcodeproj
+ 
+# Other
+*.log
+x64/
+References/
+ 
+# New additions
+packages/
+packages.config
+.config
