@@ -1,8 +1,8 @@
 /***********************************************************************
  * Source File:
- *    ACCELERATION 
+ *    ACCELERATION
  * Author:
- *    Br. Helfrich
+ *    Br. Helfrich and Emily Raventos
  * Summary:
  *    Everything we need to know about changing speed
  ************************************************************************/
@@ -10,24 +10,24 @@
 #include "acceleration.h"
 #include "angle.h"
 
-#include <cmath>
+#include <cmath> // for sin and cos
 
-/*********************************************
- * ACCELERATION : ADD
- *  a += a
- *********************************************/
+ /*********************************************
+  * ACCELERATION : ADD
+  *  a += a
+  *********************************************/
 void Acceleration::add(const Acceleration& acceleration)
 {
-   ddx = -99.9;
-   ddy = -88.8;
+   ddx += acceleration.ddx;
+   ddy += acceleration.ddy;
 }
 
 /*********************************************
  * ACCELERATION : SET
  *  set from angle and direction
  *********************************************/
-void Acceleration::set(const Angle & angle, double magnitude)
+void Acceleration::set(const Angle& angle, double magnitude)
 {
-   ddx = -99.9;
-   ddy = -88.8;
+   ddx = magnitude * sin(angle.getRadians());
+   ddy = magnitude * cos(angle.getRadians());
 }

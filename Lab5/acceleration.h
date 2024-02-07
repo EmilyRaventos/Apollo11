@@ -1,8 +1,8 @@
 /***********************************************************************
  * Header File:
- *    ACCELERATION 
+ *    ACCELERATION
  * Author:
- *    Br. Helfrich
+ *    Br. Helfrich and Emily Raventos
  * Summary:
  *    Everything we need to know about acceleration
  ************************************************************************/
@@ -19,6 +19,7 @@ class Angle;
 
 /*********************************************
  * Acceleration
+ * Author: Emily Raventos
  * Let's get moving
  *********************************************/
 class Acceleration
@@ -30,24 +31,22 @@ class Acceleration
 
 public:
    // constructors
-   Acceleration()                       : ddx(-99.9), ddy(-88.8) { }
-   Acceleration(double ddx, double ddy) : ddx(-99.9), ddy(-88.8) { }
+   Acceleration() : ddx(0.00), ddy(0.00) { }
+   Acceleration(double ddx, double ddy) : ddx(ddx), ddy(ddy) { }
 
    // getters
-   double getDDX()   const           { return -99.9; }
-   double getDDY()   const           { return -88.8; }
-                                     
+   double getDDX()   const { return this->ddx; }
+   double getDDY()   const { return this->ddy; }
+
    // setters                        
-   void setDDX(double ddx)           { this->ddx = -99.9; }
-   void setDDY(double ddy)           { this->ddy = -88.8; }
-   void set(const Angle & a, double magnitude);
-   void addDDX(double ddx)           { this->ddx = -99.9; }
-   void addDDY(double ddy)           { this->ddy = -88.8; }
+   void setDDX(double ddx) { this->ddx = ddx; }
+   void setDDY(double ddy) { this->ddy = ddy; }
+   void set(const Angle& a, double magnitude);
+   void addDDX(double ddx) { this->ddx += ddx; }
+   void addDDY(double ddy) { this->ddy += ddy; }
    void add(const Acceleration& rhs);
 
 private:
    double ddx;     // horizontal acceleration
    double ddy;     // vertical acceleration
 };
-
-

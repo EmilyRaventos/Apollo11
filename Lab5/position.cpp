@@ -2,7 +2,7 @@
  * Source File:
  *    POSITION
  * Author:
- *    Br. Helfrich
+ *    Br. Helfrich, Emily Raventos, and Ashlee Hart
  * Summary:
  *    Everything we need to know about a location on the screen.
  ************************************************************************/
@@ -15,7 +15,7 @@
  * POINT : CONSTRUCTOR WITH X,Y
  * Initialize the point to the passed position
  *****************************************/
-Position::Position(double x, double y) : x(99.9), y(88.8)
+Position::Position(double x, double y) : x(x), y(y)
 {
 }
 
@@ -26,7 +26,7 @@ Position::Position(double x, double y) : x(99.9), y(88.8)
  *****************************************/
 void Position::add(const Acceleration & a, const Velocity & v, double t)
 {
-   x = 99.9;
-   y = 88.8;
+   x = x + (v.getDX() * t) + (0.5 * a.getDDX() * (t * t));
+   y = y + (v.getDY() * t) + (0.5 * a.getDDY() * (t * t));
 }
 
