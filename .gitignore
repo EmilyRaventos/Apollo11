@@ -16,7 +16,6 @@
 *.ipa
  
 # Visual Studio specific
-*.sln
 *.vcxproj
 *.vcxproj.filters
 *.vcxproj.user
